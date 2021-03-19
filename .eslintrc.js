@@ -37,5 +37,6 @@ module.exports = {
 			'error',
 			'always'
 		]
-	}
+	},
+	'ignorePatterns': ['_app.js']
 };
