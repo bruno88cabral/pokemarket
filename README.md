@@ -1,6 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Este é uma aplicação que gera quatro lojas de pokemon dinamicamente conforme seu tipo:
+- Dark
+- Ghost
+- Ice
+- Rock
 
-## Getting Started
+Baseado no [https://pokeapi.co/](PokeAPI)
+
+A lojas estão todas em in
+
+## Iniciando o projeto
 
 First, run the development server:
 
