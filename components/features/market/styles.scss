@@ -1,0 +1,33 @@
+@import '../../../styles/globals.scss';
+
+.market {
+    margin-top: 8rem;
+    display: grid;
+
+    @include sm {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        margin-top: 9rem;
+    }
+
+    @include xl {
+        margin-top: 11rem;
+    } 
+
+    .pokemon {
+        display: grid;
+        grid-template-columns: 100%;
+
+        @include sm {
+            grid-template-columns: 50% 50%;
+        } 
+
+        @include xl {
+            grid-template-columns: 25% 25% 25% 25%;
+        } 
+    }
+
+    .alert {
+        margin: 0 auto;
+    }
+}

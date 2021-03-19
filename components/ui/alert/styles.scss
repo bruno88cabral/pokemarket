@@ -1,0 +1,10 @@
+.alert {
+    width: 15rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .img {
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,188 @@
+@import '../../../styles/globals.scss';
+
+@mixin type-color($background, $color) {
+    color: $color;
+    background-color: $background;
+}
+
+.perfil {
+    margin: 2rem;
+    
+    .card {
+        position: relative;
+        border-radius: 1rem;
+        max-width: 350px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        @include sm {
+            margin: 2rem auto;
+        } 
+
+        .add {
+            position: absolute;
+            right: 0;
+            top: -3.5rem;
+        }
+
+        .name {
+            text-transform: capitalize;
+            border-radius: 5px 5px 0 0;
+            border: 1px solid #333;
+            margin-bottom: 0;
+            background-color: $off-black;
+            color: $off-white;
+            padding: 0.5rem 1rem;
+        }
+
+        .img {
+            text-align: center;
+            background-color: #fff;
+            width: 100%;
+        }
+
+        .info {
+            background-color: $off-black;
+            padding: 1rem;
+            color: $off-white;
+            border-radius: 0 0 5px 5px;
+
+            .height {
+                display: grid;
+                grid-template-columns: 33% 33% 33%;
+            }
+
+            dl {
+                dt, dd {
+                    display: block;
+                    margin-inline-start: 0;
+                    margin-bottom: 1rem;
+                }
+                &:last-child {
+                    dd {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+
+            .types {
+                display: grid;
+                grid-template-columns: 33% 33% 33%;
+    
+                .type {
+                    font-size: 0.8rem;
+                    text-transform: capitalize;
+                    text-align: center;
+                    padding: 5px 10px;
+                    border-radius: 3px;
+                    margin-right: 1rem;
+                    font-weight: 500;
+                    margin-bottom: 1rem;
+
+                    &.normal {
+                        @include type-color($normal-color, $off-white);
+                    }
+
+                    &.fire {
+                        @include type-color($fire-color, $off-white)
+                    }
+
+                    &.water {
+                        @include type-color($water-color, $off-white)
+                    }
+
+                    &.electric {
+                        @include type-color($electric-color, $off-black)
+                    }
+                    
+                    &.grass {
+                        @include type-color($grass-color, $off-black)
+                    }
+                    
+                    &.ice {
+                        @include type-color($ice-color, $off-black)
+                    }
+                    
+                    &.fighting {
+                        @include type-color($fighting-color, $off-white)
+                    }
+                    
+                    &.poison {
+                        @include type-color($poison-color, $off-white)
+                    }
+                    
+                    &.ground {
+                        @include type-color($ground-color, $off-black)
+                    }
+                    
+                    &.flying {
+                        @include type-color($flying-color, $off-black)
+                    }
+                    
+                    &.psychic {
+                        @include type-color($psychic-color, $off-white)
+                    }
+                    
+                    &.fairy {
+                        @include type-color($fairy-color, $off-black)
+                    }
+
+                    &.bug {
+                        @include type-color($bug-color, $off-white)
+                    }
+
+                    &.rock {
+                        @include type-color($rock-color, $off-white)
+                    }
+
+                    &.ghost {
+                        @include type-color($ghost-color, $off-white)
+                    }
+
+                    &.dragon {
+                        @include type-color($dragon-color, $off-white)
+                    }
+
+                    &.dark {
+                        @include type-color($dark-color, $off-white)
+                    }
+
+                    &.steel {
+                        @include type-color($steel-color, $off-black)
+                    }
+                }
+            }
+
+            .stats {
+                display: grid;
+                grid-template-columns: 16% 16% 16% 16% 16% 16%;
+                text-align: center;
+
+                .stat {
+                    width: 1rem;
+                    height: 5rem;
+                    border: 1px solid #aaa;
+                    margin: 0 auto 0.5rem;
+                    font-size: 3px;
+                    transform: rotate(180deg);
+
+                    .percent {
+                        width: 1rem;
+                        background-color: #2980b9;
+                    }
+                }
+
+                dt {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .alert {
+        margin-top: 10rem;
+    }
+}

@@ -1,0 +1,105 @@
+//color types variables
+$normal-color: #a4acaf;
+$fire-color: #fd7d24;
+$water-color: #4592c4;
+$electric-color: #eed535;
+$grass-color: #9bcc50;
+$ice-color: #4CD1C0;
+$fighting-color: #d56723;
+$poison-color: #b97fc9;
+$ground-color: #f7de3f;
+$flying-color: #3dc7ef;
+$psychic-color: #f366b9;
+$fairy-color: #fdb9e9;
+$bug-color: #729f3f;
+$rock-color: #C8B686;
+$ghost-color: #4C6AB2;
+$dragon-color: #53a4cf;
+$dark-color: #5B5466;
+$steel-color: #9eb7b8;
+
+//color variables
+$off-white: #eee;
+$off-black: #333;
+
+//screen variables
+$screen-sm-min: 576px;
+$screen-md-min: 768px;
+$screen-lg-min: 992px;
+$screen-xl-min: 1200px;
+
+// screen mixins
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
+//background types mixin
+@mixin background-types {
+    &.ghost{
+        background-color: $ghost-color;
+    }
+
+    &.rock {
+        background-color: $rock-color;
+    }
+
+    &.ice {
+        background-color: $ice-color;
+    }
+
+    &.dark {
+        background-color: $dark-color;
+    }
+}
+
+//global style
+html,
+body {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    background: $off-white;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+//custom scrollbar
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px #666; 
+    border-radius: 3px;
+    background-color: transparent
+
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999; 
+}

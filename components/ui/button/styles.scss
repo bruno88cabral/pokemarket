@@ -1,0 +1,34 @@
+button {
+    color: #eee;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+
+    &.add {
+        background-color: #2ecc71;
+        padding: 0.9rem;
+        font-size: 0.9rem;
+    }
+
+    &.primary {
+        background-color: #3498db;
+    }
+
+    &.secundary {
+        background-color: #eee;
+        color: #3498db;
+        border: 1px solid #3498db;
+    }
+
+    &.disabled {
+        background-color: #ccc;
+    }
+}

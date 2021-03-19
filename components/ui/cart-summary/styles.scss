@@ -1,0 +1,209 @@
+@import '../../../styles/globals.scss';
+
+.cart {
+    position: fixed;
+    width: 27.5%;
+    height: 85%;
+    right: -100%;
+    top: 6rem;
+    border-radius: 5px;
+    transition: 0.5s;
+
+    @include sm {
+        right: 2.5%;
+        top: 9rem;
+        height: 83%
+    }
+
+    @include lg {
+        height: 80%;
+    }
+    
+    @include xl {
+        top: 11rem;
+        height: 80%
+    }
+    
+    @include background-types;
+    
+    &.openCart {
+        right: 1rem;
+        width: 88.5%;
+
+        @include sm {
+            dl {
+                flex-direction: row;
+            }
+        }
+
+        @include xl {
+            top: 8rem;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: auto;
+        }
+    }
+
+    dl {
+        display: flex;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #ddd;
+        margin: 0;
+
+        @include sm {
+            flex-direction: column;
+            height: 3rem;
+            justify-content: space-between;
+        }
+
+        @include lg {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &:last-child {
+            border: 0;
+        }
+
+        dt {
+            text-transform: capitalize;
+        }
+
+        dd {
+            margin-inline-start: 0;
+            width: 6rem
+        }
+    }
+
+    .cart-summary {
+        background-color: $off-white;
+        margin: 0.5rem;
+        border-radius: 5px;
+        height: 63.5vh;
+        overflow: auto;
+        padding: 0 2rem;
+
+        h2 {
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+    }
+
+    .total {
+        padding: 1.5rem 2.5rem;
+
+        dl {
+            border: 0;
+            padding: 0;
+        }
+
+        @include sm {
+            padding: 0 0.5rem;
+            dl {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+
+        @include lg {
+            padding: 0.5rem 2.5rem;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: auto;
+
+        @include sm {
+            display: block;
+            text-align: initial;
+            padding: 0 0.5rem;
+
+            button {
+                margin: 0.3rem 0;
+            }
+        }
+
+        @include md {
+            flex-direction: column;
+            height: 11vh;
+            justify-content: space-between;
+        }
+
+        @include lg {   
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: auto;
+        }
+    }
+
+    &.resume {
+        position: initial;
+        width: 90%;
+        max-width: 50vh;
+        height: auto;
+        max-height: 90vh;
+        padding-top: 0.1rem;
+        margin: 1.5rem auto;
+
+        dl {
+            flex-direction: column;
+            height: 3rem;
+
+            @include sm {
+                flex-direction: row;
+                height: auto;
+            }
+        }
+        
+        .cart-summarty {
+            margin: 1rem;
+
+        }
+
+        .total {
+            padding: 1rem 1rem 0.5rem;
+
+            dl {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            @include sm {
+                padding: 0 3rem;
+
+                dl {
+                    justify-content: flex-end;
+                }
+
+                dd {
+                    margin-left: 1rem;
+                }
+            }
+        }
+
+        .add {
+            width: 95%;
+            margin: 0 auto;
+            padding: 1rem 0 2rem;
+
+            @include sm {
+                padding-right: 2rem;
+                width: 7rem;
+                margin: 0 1rem 0 auto;
+            }
+        }
+    }
+}

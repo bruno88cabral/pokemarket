@@ -1,0 +1,36 @@
+@import '../../../styles/globals.scss';
+
+@mixin market-type($color) {
+    background-color: $color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $off-white;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.welcome {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    height: 100vh;
+
+    .ice {
+        @include market-type($ice-color);
+    }
+
+    .ghost {
+        @include market-type($ghost-color);
+    }
+
+    .rock {
+        @include market-type($rock-color);
+    }
+
+    .dark {
+        @include market-type($dark-color);
+    } 
+}

@@ -1,0 +1,66 @@
+@import '../../../styles/globals.scss';
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    margin: 1rem 4rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    @include sm {
+        box-shadow: none;
+        border-right: 1px solid #ddc;
+        padding: 0 3rem;
+        margin: 0 0 4rem;
+        
+        &:nth-child(2n) {
+            border-right-color: transparent;
+        }
+
+        &:last-child {
+            border-right-color: transparent;
+        }
+    }
+
+    @include xl {
+        &:nth-child(2n) {
+            border-right: 1px solid #ddc;
+        }
+
+        &:nth-child(4n) {
+            border-right-color: transparent;
+        }
+    }
+
+    .link {
+        text-decoration: none;
+        color: #333;
+        
+        .name {
+            text-transform: capitalize;
+            margin: 0.5rem 0;
+            color: $off-black;
+        }
+        
+        .img {
+            background-color: #fff;
+            height: 8rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .info {
+        background-color: $off-white;
+        margin: 0.5rem 0 0;
+        padding: 1rem;
+        border-radius: 0 0 5px 5px;
+
+        h4 {
+            margin: 0 0 1rem;
+        }
+    }
+}
