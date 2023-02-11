@@ -27,7 +27,7 @@ const Modal = ({
 				<div className={buttons}>
 					{secundaryBtnLabel && (
 						<Button 
-							type="secundary"
+							type="tertiary"
 							onClick={onClickSecundaryBtn}
 						>
 							{ secundaryBtnLabel }
@@ -35,7 +35,7 @@ const Modal = ({
 					)}
 
 					<Button 
-						type="primary" 
+						type="add" 
 						onClick={onClickPrimaryBtn}
 					>
 						{ primaryBtnLabel }

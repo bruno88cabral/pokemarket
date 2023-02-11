@@ -5,14 +5,14 @@ import styles from './styles.scss';
 
 const Cart = ({ type }) => {
 	return (
-		<div className={styles.cart}>
+		<section className={styles.cart}>
 			<BackPage />
 
 			<CartSummary 
 				type={type}
 				resume={true}
 			/>
-		</div>
+		</section>
 	);
 };
 

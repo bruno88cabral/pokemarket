@@ -21,7 +21,7 @@
     
     @include xl {
         top: 11rem;
-        height: 80%
+        height: 70%
     }
     
     @include background-types;
@@ -82,18 +82,45 @@
     }
 
     .cart-summary {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         background-color: $off-white;
         margin: 0.5rem;
         border-radius: 5px;
-        height: 63.5vh;
+        height: 65vh;
         overflow: auto;
         padding: 0 2rem;
+
+         @include lg {
+            height: 50vh;
+        }
 
         h2 {
             margin-top: 1rem;
             text-align: center;
         }
 
+    }
+
+    .close-icon {
+        position: absolute;
+        left: 1.5rem;
+        top: 1.5rem;
+    }
+
+    .cart-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        @include sm {
+            height: auto;
+        }
+        
+        @include lg {
+            height: auto;
+        }
     }
 
     .total {
@@ -113,7 +140,7 @@
         }
 
         @include lg {
-            padding: 0.5rem 2.5rem;
+            padding: 0 2.5rem;
         }
     }
 
@@ -143,9 +170,7 @@
         @include lg {   
             display: flex;
             flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            height: auto;
+            padding: 0 2.5rem;
         }
     }
 

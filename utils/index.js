@@ -18,3 +18,5 @@ export const groupBy = (objectArray, property) => {
 		return acc;
 	}, {});
 };
+
+export const isMobile = ({ innerWidth }) => innerWidth <= 600;

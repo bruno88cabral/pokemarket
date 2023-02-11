@@ -3,7 +3,7 @@ button {
     width: 100%;
     border: none;
     border-radius: 5px;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     font-weight: bold;
     font-size: 1rem;
     cursor: pointer;
@@ -19,16 +19,26 @@ button {
     }
 
     &.primary {
-        background-color: #3498db;
+        background-color: transparent;
+        border: 1px solid #fff;
     }
 
     &.secundary {
-        background-color: #eee;
-        color: #3498db;
-        border: 1px solid #3498db;
+        background-color: transparent;
+        color: #fff;
+        padding: 0;
+    }
+
+    &.tertiary {
+        background-color: transparent;
+        border: 1px solid #2ecc71;
+        color: #2ecc71;
+        padding: .8rem 1rem;
     }
 
     &.disabled {
-        background-color: #ccc;
+        color: #ccc;
+        border: none;
+        cursor: not-allowed;
     }
 }

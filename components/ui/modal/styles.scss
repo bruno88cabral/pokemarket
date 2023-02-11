@@ -17,14 +17,14 @@
         background-color: $off-white;
         padding: 20px;
         border: 1px solid #888;
-        width: 50%;
+        width: 75%;
         text-align: center;
         border-radius: 5px;
 
         @include sm {
             width: 30%;
         }
-
+        
         h2 {
             margin: 0 auto;
             max-width: 16rem;

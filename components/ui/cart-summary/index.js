@@ -4,7 +4,7 @@ import Router from 'next/router';
 import { Button, Modal } from '../../../components';
 import classNames from 'classnames';
 import { useLocalStorage } from '../../../hooks';
-import { sumCartValue, groupBy } from '../../../utils';
+import { sumCartValue, groupBy, isMobile } from '../../../utils';
 import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './styles.scss';
@@ -81,6 +81,12 @@ const CartSummary = ({ type, resume = false }) => {
 		Router.router.push(`/cart/${type}`);
 	};
 
+	const onClickClose = () => {
+		dispatch({
+			type: 'TOGGLE_CART'
+		});
+	};
+
 	const total = sumCartValue(cart);
     
 	const cx = classNames(
@@ -95,32 +101,27 @@ const CartSummary = ({ type, resume = false }) => {
 	return (
 		<section className={cx}>
 			<div className={styles['cart-summary']}>
-				<h2>Cart</h2>
-				{cartGroup?.map(({
-					name,
-					value,
-					length}, key) => (
-					<dl key={key}>
-						<dt>{ `${length}x - ${name}` }</dt>
-						<dd>US$ { value }</dd>
-					</dl>
-				))}
-			</div>
-			<div className={styles.total}>
-				<dl>
-					<dt>
-						<strong>
-                                Total    
-						</strong>
-					</dt>
-					<dd>
-						<strong>
-							{ total 
-								? `US$ ${total}` 
-								: '-' }
-						</strong>
-					</dd>
-				</dl>
+				<div>
+					{isMobile(window) && !resume && (
+						<img
+							className={styles['close-icon']}
+							src="/x.png"
+							width={25}
+							onClick={onClickClose}
+						/>
+					)}
+					<h2>Cart</h2>
+					{cartGroup?.map(({
+						name,
+						value,
+						length
+					}, key) => (
+						<dl key={key}>
+							<dt>{ `${length}x - ${name}` }</dt>
+							<dd>US$ { value }</dd>
+						</dl>
+					))}
+				</div>
 			</div>
 			{resume ? (
 				<div className={styles.add}>
@@ -133,20 +134,38 @@ const CartSummary = ({ type, resume = false }) => {
 					</Button>
 				</div>
 			) : (
-				<div className={styles.buttons}>
-					<Button 
-						onClick={onClean}
-						type="secundary"
-					>
-                        Clean cart
-					</Button>
-					<Button
-						disabled={cart?.length === 0}
-						onClick={onCheckout}
-						type="primary"
-					>
-                        Checkout
-					</Button>
+				<div className={styles['cart-footer']}>
+					<div className={styles.total}>
+						<dl>
+							<dt>
+								<strong>
+									Total
+								</strong>
+							</dt>
+							<dd>
+								<strong>
+									{total
+										? `US$ ${total}`
+										: '-'}
+								</strong>
+							</dd>
+						</dl>
+					</div>
+					<div className={styles.buttons}>
+						<Button
+							onClick={onClean}
+							type="secundary"
+						>
+								Clean cart
+						</Button>
+						<Button
+							disabled={cart?.length === 0}
+							onClick={onCheckout}
+							type="primary"
+						>
+								Checkout
+						</Button>
+					</div>
 				</div>
 			)}
 			{showModal && ( 

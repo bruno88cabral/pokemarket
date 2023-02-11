@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Link from 'next/link';
 
 import styles from './styles.scss';
+import { isMobile } from '../../../utils';
 
 const Header = ({ type }) => {
 	const header = classNames(styles.container, styles[type]);
@@ -17,9 +18,11 @@ const Header = ({ type }) => {
 	const counter = cart?.length;
 
 	const onClickCart = () => {
-		dispatch({
-			type: 'TOGGLE_CART'
-		});
+		if (isMobile(window) ) {
+			dispatch({
+				type: 'TOGGLE_CART'
+			});
+		}
 	};
 
 	return (
